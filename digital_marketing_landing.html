@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Digital Marketing Mastery Guide - Transform Your Business in 30 Days</title>
+    <meta name="description" content="Master digital marketing with our comprehensive guide. Learn proven strategies that generated $1M+ in revenue. Download instantly and start growing today.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,800 1000,1000"/></svg>') no-repeat center center;
+            background-size: cover;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .checkmark {
+            color: #4ade80;
+            font-size: 1.2rem;
+        }
+        
+        /* CTA Buttons */
+        .cta-primary {
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(240, 147, 251, 0.4);
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            padding: 15px 30px;
+            border: 2px solid white;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .cta-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        /* Price Section */
+        .price-highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            margin: 2rem auto;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+        }
+        
+        .price-original {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 1.2rem;
+        }
+        
+        .price-current {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4ade80;
+        }
+        
+        .price-savings {
+            font-size: 1.1rem;
+            color: #fbbf24;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1f2937;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #4ade80;
+        }
+        
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+        
+        /* What You'll Learn */
+        .curriculum {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .curriculum-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .curriculum-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .curriculum-number {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        
+        /* Guarantee Section */
+        .guarantee {
+            padding: 80px 0;
+            background: #f8fafc;
+            text-align: center;
+        }
+        
+        .guarantee-badge {
+            background: linear-gradient(45deg, #4ade80, #22c55e);
+            color: white;
+            padding: 2rem;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .faq-item {
+            background: #f8fafc;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 1.5rem;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .urgency {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-features {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .cta-secondary {
+                margin: 1rem 0 0 0;
+            }
+            
+            .curriculum-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">📚 EbookMaster</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#curriculum">What's Inside</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Master Digital Marketing in Just 30 Days</h1>
+                <p class="subtitle">The Complete Guide That Generated Over $1.2M in Revenue for 500+ Businesses</p>
+                
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <span class="checkmark">✓</span>
+                        <span>247 Pages of Proven Strategies</span>
+                    </div>
+                    <div class="hero-feature">
+                        <span class="checkmark">✓</span>
+                        <span>Instant Download</span>
+                    </div>
+                    <div class="hero-feature">
+                        <span class="checkmark">✓</span>
+                        <span>30-Day Money Back Guarantee</span>
+                    </div>
+                </div>
+
+                <div class="price-highlight">
+                    <div class="price-original">Was $97</div>
+                    <div class="price-current">Now Only $29</div>
+                    <div class="price-savings">Save $68 Today!</div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <a href="#purchase" class="cta-primary" onclick="handlePurchase()">Get Instant Access Now</a>
+                    <a href="#features" class="cta-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why This Ebook Changes Everything</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Proven Strategies</h3>
+                    <p>Learn the exact methods used by top marketers to generate millions in revenue. No theory - just what actually works.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Quick Implementation</h3>
+                    <p>Start seeing results in days, not months. Each strategy comes with step-by-step instructions and real examples.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📊</div>
+                    <h3>Data-Driven Results</h3>
+                    <p>Every technique is backed by real case studies and measurable outcomes from successful campaigns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Readers Are Saying</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"This ebook completely transformed my business. I implemented the strategies and saw a 300% increase in sales within 6 weeks!"</p>
+                    <p class="testimonial-author">- Sarah Johnson, E-commerce Owner</p>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Finally, a marketing guide that's practical and actually works. Worth every penny and more."</p>
+                    <p class="testimonial-author">- Mike Chen, Startup Founder</p>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"I've read dozens of marketing books, but this one gave me strategies I could implement immediately. Game changer!"</p>
+                    <p class="testimonial-author">- Emma Williams, Marketing Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Learn -->
+    <section class="curriculum" id="curriculum">
+        <div class="container">
+            <h2 class="section-title">What's Inside The Guide</h2>
+            <div class="curriculum-list">
+                <div class="curriculum-item fade-in">
+                    <div class="curriculum-number">1</div>
+                    <div>
+                        <h4>Foundation Strategy</h4>
+                        <p>Build an unshakeable marketing foundation that scales with your business growth</p>
+                    </div>
+                </div>
+                <div class="curriculum-item fade-in">
+                    <div class="curriculum-number">2</div>
+                    <div>
+                        <h4>Social Media Mastery</h4>
+                        <p>Turn followers into customers with engagement strategies that convert</p>
+                    </div>
+                </div>
+                <div class="curriculum-item fade-in">
+                    <div class="curriculum-number">3</div>
+                    <div>
+                        <h4>Email Marketing Secrets</h4>
+                        <p>Build automated sequences that sell while you sleep</p>
+                    </div>
+                </div>
+                <div class="curriculum-item fade-in">
+                    <div class="curriculum-number">4</div>
+                    <div>
+                        <h4>Content That Converts</h4>
+                        <p>Create compelling content that drives traffic and generates leads</p>
+                    </div>
+                </div>
+                <div class="curriculum-item fade-in">
+                    <div class="curriculum-number">5</div>
+                    <div>
+                        <h4>Paid Advertising ROI</h4>
+                        <p>Maximize ad spend with targeting strategies that actually work</p>
+                    </div>
+                </div>
+                <div class="curriculum-item fade-in">
+                    <div class="curriculum-number">6</div>
+                    <div>
+                        <h4>Analytics & Optimization</h4>
+                        <p>Track what matters and optimize for maximum profitability</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-badge">30-Day Guarantee</div>
+            <h2>Risk-Free Investment</h2>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Try our strategies for 30 days. If you don't see real results, we'll refund every penny. No questions asked.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    Is this suitable for beginners?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! This guide is written for all skill levels, from complete beginners to experienced marketers looking to refine their strategies.</p>
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    How quickly can I access the ebook?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Immediately! After purchase, you'll receive an email with your download link within minutes.</p>
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    What format is the ebook in?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>You'll receive the ebook in PDF format, compatible with all devices and easy to read on phones, tablets, or computers.</p>
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    Is there ongoing support?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! All purchasers get access to our private community and monthly Q&A sessions with marketing experts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section (appears after payment) -->
+    <section class="download-section" id="download" style="display: none; padding: 50px 0; background: #f0f9ff; text-align: center;">
+        <div class="container">
+            <h2 style="color: #1f2937; margin-bottom: 1rem;">🎉 Thank You for Your Purchase!</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Your Digital Marketing Mastery Guide is ready for download:</p>
+            <a href="https://drive.google.com/uc?export=download&id=1OOz9uFSJC7eychgCsQbhJk4VrGc3U9lt" 
+               class="cta-primary" 
+               target="_blank" 
+               style="background: linear-gradient(45deg, #10b981 0%, #059669 100%); animation: none;">
+               📥 Download Your Ebook Now
+            </a>
+            <p style="margin-top: 1rem; color: #6b7280; font-size: 0.9rem;">
+                💾 Right-click the button above and select "Save Link As" to download directly<br>
+                📱 The PDF works on all devices - phones, tablets, and computers
+            </p>
+        </div>
+    </section>
+    <section class="final-cta">
+        <div class="container">
+            <div class="urgency">🔥 Limited Time: 70% OFF - Only 48 hours left!</div>
+            <h2>Ready to Transform Your Marketing?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;">Join 10,000+ entrepreneurs who've already downloaded this game-changing guide</p>
+            
+            <div class="price-highlight">
+                <div class="price-original">Regular Price: $97</div>
+                <div class="price-current">Today Only: $29</div>
+                <div class="price-savings">You Save: $68</div>
+            </div>
+
+            <a href="#purchase" class="cta-primary" onclick="handlePurchase()" style="font-size: 1.3rem; padding: 20px 50px;">Get Instant Access Now</a>
+            
+            <p style="margin-top: 1rem; opacity: 0.9;">✓ Instant Download ✓ 30-Day Guarantee ✓ Secure Payment</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#refund">Refund Policy</a>
+            </div>
+            <p>&copy; 2025 EbookMaster. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQ Toggle
+        function toggleFaq(item) {
+            item.classList.toggle('active');
+        }
+
+        // Scroll animations
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('load', handleScrollAnimations);
+
+        // Purchase handler
+        function handlePurchase() {
+            // Redirect to PayPal payment
+            window.open('http://paypal.me/GiovanniMirci', '_blank');
+            
+            // Show download instructions with actual download link
+            setTimeout(() => {
+                const downloadLink = 'https://drive.google.com/uc?export=download&id=1OOz9uFSJC7eychgCsQbhJk4VrGc3U9lt';
+                const message = `Thank you for your purchase! 
+                
+After completing your PayPal payment, you can download your ebook here:
+${downloadLink}
+
+Please bookmark this link or copy it now. You can also right-click and "Save Link As" to download the PDF directly.
+
+The file will be available immediately after payment completion.`;
+                
+                if (confirm(message + '\n\nClick OK to copy the download link to your clipboard, or Cancel to close this message.')) {
+                    // Copy download link to clipboard
+                    navigator.clipboard.writeText(downloadLink).then(() => {
+                        alert('Download link copied to clipboard!');
+                    }).catch(() => {
+                        prompt('Copy this download link:', downloadLink);
+                    });
+                }
+            }, 1500);
+        }
+
+        // Add download button functionality
+        function showDownloadLink() {
+            const downloadLink = 'https://drive.google.com/uc?export=download&id=1OOz9uFSJC7eychgCsQbhJk4VrGc3U9lt';
+            window.open(downloadLink, '_blank');
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(102, 126, 234, 0.95)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            }
+        });
+
+        // Dynamic pricing countdown (optional)
+        function updateCountdown() {
+            // You can implement a real countdown timer here
+            const countdownElements = document.querySelectorAll('.urgency');
+            // Update countdown logic here
+        }
+
+        // Call every second if you want a real countdown
+        // setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
